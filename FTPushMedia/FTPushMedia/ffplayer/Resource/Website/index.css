@@ -1,0 +1,26 @@
+#intro {
+  margin-top: 15px;
+  width: 590px;
+  padding: 5px;
+  background: #EEEEEE;
+  font-size: 0.95em;
+  color: black;
+}
+
+#purchase {
+  margin-top: 15px;
+  width: 590px;
+  padding: 5px;
+  background: #EEEEEE;
+  font-size: 0.95em;
+  color: #F20;
+}
+
+#fileList {
+  margin-top: 15px;
+  width: 600px;
+}
+
+#collection {
+  width: 200px;
+}

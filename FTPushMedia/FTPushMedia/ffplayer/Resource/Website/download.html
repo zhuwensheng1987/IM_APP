@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FFPlayer Web Server</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="download.css">
+  <link rel="stylesheet" href="upload.css">
+  <link rel="stylesheet" href="cssbutton-min.css">
+  <script src="yui-min.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script type="text/javascript">
+      var fftarget="%uploadPath%";
+      
+      function updateHeight () {
+          var main = $(window.parent.document).find("#main");
+          var thisheight = $(document).height()+30;
+          main.height(thisheight);
+      }
+  
+      function updateOnLoad() {
+          $(window.parent.document).find("#main").load(function(){ updateHeight(); });
+        $("#createFolderButton").click( function () {
+            var v = $("#foldername").val();
+            if ( !v )
+                alert("Input the folder name first!");
+            else {
+                var key = (!fftarget) ? "name="  : "&name=";
+                document.location = "/createFolder?" + fftarget + key + encodeURIComponent(v);
+            }
+        });
+      }
+  </script>
+  <script src="upload.js"></script>
+</head>
+<body>
+    
+    <div>
+        <strong>Current Path : %currentPath%</strong>
+    </div>
+
+  <table class="list" id="fileList">
+      <thead>
+          <tr><th id="name">File Name</th><th id="size">File Size</th><th id="status">Status</th></tr>
+      </thead>
+      <tbody>
+      </tbody>
+      <tfoot>
+          <tr><td colspan="3">Select or drag and drop files here.</td></tr>
+      </tfoot>
+  </table>
+  
+  <div id="uploaderContainer" width="100%">
+      <div id="selectFilesButtonContainer">
+      </div>
+      <div id="uploadFilesButtonContainer">
+          <button type="button" id="uploadFilesButton" class="yui3-button" style="width:250px; height:35px;">Upload Files</button>
+      </div>
+  </div>
+
+    <div id="createFolder">
+        <div>
+            <strong>Create folder:</strong>&nbsp;&nbsp;<input id="foldername" type="text" size="32" placeholder="Folder Name">
+            <button type="button" id="createFolderButton" class="yui3-button" style="width:250px; height:35px;">Create</button>
+        </div>
+        <div id="help">Enter the name of the new folder and click the create button.</div>
+    </div>
+
+  <table class="list" id="fileList">
+    <thead>
+      <tr><th id="file">File Name</th><th id="collection">Size</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+      %content%
+    <tfoot>
+      <tr><td colspan="2">Click a file to download.</td></tr>
+    </tfoot>
+  </table>
+  
+  <script type="text/javascript">
+      updateOnLoad();
+  </script>
+
+</body>
+</html>

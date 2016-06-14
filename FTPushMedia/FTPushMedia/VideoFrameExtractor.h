@@ -25,14 +25,18 @@
 
 #include "libavformat/avformat.h"
 #include "libswscale/swscale.h"
+#import "libswresample/swresample.h"
 
 @interface VideoFrameExtractor : NSObject {
     AVFormatContext *pFormatCtx;
     AVCodecContext *pCodecCtx;
+    AVCodecContext *aCodecCtx;
+    SwrContext* swrCtx;
     AVFrame *pFrame;
     AVPacket packet;
     AVPicture picture;
     int videoStream;
+    int audioStream;
     struct SwsContext *img_convert_ctx;
     int sourceWidth, sourceHeight;
     int outputWidth, outputHeight;
@@ -41,8 +45,12 @@
     double currentTime;
 }
 
+@property (nonatomic, assign)UIImage *image;
 /* Last decoded picture as UIImage */
 @property (nonatomic, readonly) UIImage *currentImage;
+
+@property (nonatomic, readonly)uint8_t* frame_buf;
+- (NSInteger)getAudioBuffer;
 
 /* Size of video frame */
 @property (nonatomic, readonly) int sourceWidth, sourceHeight;
@@ -61,6 +69,10 @@
 
 /* Read the next frame from the video stream. Returns false if no frame read (video over). */
 -(BOOL)stepFrame;
+
+@property (nonatomic)NSInteger count;
+
+-(BOOL)getPacket;
 
 /* Seek to closest keyframe near specified time */
 -(void)seekTime:(double)seconds;

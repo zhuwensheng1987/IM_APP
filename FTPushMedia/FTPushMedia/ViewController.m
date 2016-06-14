@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 
+#import <AVFoundation/AVFoundation.h>
 @interface ViewController ()
 
 @end
@@ -16,12 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
+//    AVCaptureVideoDataOutput
+//    AVCaptureAudioDataOutput
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
 }
 
 @end
