@@ -232,6 +232,7 @@
 		93183C211CB741BC008C4FC5 /* yui-min.js in Resources */ = {isa = PBXBuildFile; fileRef = 93183B3D1CB741BB008C4FC5 /* yui-min.js */; };
 		93183C251CB759B3008C4FC5 /* FFWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93183C241CB759B3008C4FC5 /* FFWebServer.m */; };
 		93183C271CB75A13008C4FC5 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 93183C261CB75A13008C4FC5 /* libsqlite3.0.tbd */; };
+		931922431D1B88AC00882202 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 931922421D1B88AC00882202 /* InfoPlist.strings */; };
 		933651441B5E3A99000670BF /* simplest_ffmpeg_audio_encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = 933651431B5E3A99000670BF /* simplest_ffmpeg_audio_encoder.mm */; };
 		939C8BB01A3043E6002EFF46 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 939C8BAF1A3043E6002EFF46 /* UIAlertView+Block.m */; };
 		93A0769A1A1C426600E0F9C4 /* VideoFrameExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A076991A1C426600E0F9C4 /* VideoFrameExtractor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -675,6 +676,7 @@
 		93183C231CB759B3008C4FC5 /* FFWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFWebServer.h; sourceTree = "<group>"; };
 		93183C241CB759B3008C4FC5 /* FFWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFWebServer.m; sourceTree = "<group>"; };
 		93183C261CB75A13008C4FC5 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		931922421D1B88AC00882202 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		933651431B5E3A99000670BF /* simplest_ffmpeg_audio_encoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = simplest_ffmpeg_audio_encoder.mm; sourceTree = "<group>"; };
 		933651451B5E3AAC000670BF /* simplest_ffmpeg_audio_encoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simplest_ffmpeg_audio_encoder.h; sourceTree = "<group>"; };
 		939C8BAE1A3043E6002EFF46 /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
@@ -1409,6 +1411,7 @@
 		93A5A2E91A134C980094037A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				931922421D1B88AC00882202 /* InfoPlist.strings */,
 				93183C221CB7516A008C4FC5 /* FFPlayer-Prefix.pch */,
 				93A5A2EA1A134C980094037A /* Info.plist */,
 				93A5A2EB1A134C980094037A /* main.m */,
@@ -1538,6 +1541,7 @@
 				93183BF31CB741BC008C4FC5 /* briefcase.png in Resources */,
 				93183BF61CB741BC008C4FC5 /* camera@2x.png in Resources */,
 				93183B951CB741BC008C4FC5 /* makefile.dj in Resources */,
+				931922431D1B88AC00882202 /* InfoPlist.strings in Resources */,
 				93A5B6E71A15DE8C0094037A /* 1.png in Resources */,
 				93183BFC1CB741BC008C4FC5 /* folder@2x.png in Resources */,
 				93183BF71CB741BC008C4FC5 /* connections.png in Resources */,
@@ -1890,6 +1894,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/include",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/include\"",
 				);
 				INFOPLIST_FILE = FTPushMedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1898,6 +1903,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/FFmpeg-iOS-build-script-master/fat-x264/lib",
 					"\"$(SRCROOT)/../ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/lib\"",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/lib\"",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/fat-x264/lib\"",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1920,6 +1927,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/include",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/include\"",
 				);
 				INFOPLIST_FILE = FTPushMedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1928,6 +1936,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/../ffmpeg/FFmpeg-iOS-build-script-master/fat-x264/lib",
 					"\"$(SRCROOT)/../ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/lib\"",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/FFmpeg-iOS/lib\"",
+					"\"$(SRCROOT)/../../Pro/IM/ffmpeg/FFmpeg-iOS-build-script-master/fat-x264/lib\"",
 				);
 				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

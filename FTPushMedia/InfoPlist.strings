@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CommunityFinance
+
+  Created by 朱文生 on 15/10/15.
+  Copyright © 2015年 L. All rights reserved.
+*/
+CFBundleName="社区金融";
+
+CFBundleDisplayName="社区金融";

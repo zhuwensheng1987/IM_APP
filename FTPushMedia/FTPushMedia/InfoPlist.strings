@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CommunityFinance
+
+  Created by 朱文生 on 15/10/15.
+  Copyright © 2015年 L. All rights reserved.
+*/
+CFBundleName="直播RTMP";
+
+CFBundleDisplayName="直播RTMP";
